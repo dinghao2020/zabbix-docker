@@ -6,7 +6,7 @@ ARG APK_FLAGS_PERSISTANT="${APK_FLAGS_COMMON} --clean-protected --no-cache"
 ARG APK_FLAGS_DEV="${APK_FLAGS_COMMON} --no-cache"
 ARG DB_TYPE=mysql
 ENV TERM=xterm
-
+RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
 RUN addgroup zabbix && \
     adduser -S \
             -D -G zabbix \
